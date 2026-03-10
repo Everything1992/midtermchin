@@ -79,7 +79,6 @@
             border-radius: 0 12px 12px 0;
         }
 
-        /* Timeline Styles */
         .timeline-node {
             position: relative;
             padding-left: 30px;
@@ -97,6 +96,14 @@
 
         .year { font-weight: 600; color: var(--primary); font-size: 0.9rem; }
         .event-title { display: block; font-size: 1.4rem; font-weight: 600; margin: 5px 0; }
+        
+        .pinyin { 
+            display: block; 
+            font-size: 0.9rem; 
+            color: #636e72; 
+            font-style: italic; 
+            margin-bottom: 10px;
+        }
 
         .bio-inset {
             display: flex;
@@ -186,7 +193,7 @@
             <h3 style="margin-top:0">💡 Language Focus</h3>
             <p>
                 In this project, I demonstrate the use of <b>Resultative Complements</b>. 
-                Key phrases include: <b>记住</b> (remembered), <b>准备好</b> (prepared), and <b>赢了</b> (won).
+                Key phrases include: <b>记住 (jì zhù)</b>, <b>准备好 (zhǔn bèi hǎo)</b>, and <b>赢了 (yíng le)</b>.
             </p>
         </div>
 
@@ -196,56 +203,61 @@
                 
                 <div class="timeline-node">
                     <span class="year">1850s</span>
-                    <span class="event-title">The Gold Rush</span>
-                    <p style="color: #636e72;">Immigrants call the city <strong style="color: var(--primary);">“Gold Mountain” (Gam Saan / 金山)</strong>.</p>
+                    <span class="event-title">淘金热 | The Gold Rush</span>
+                    <span class="pinyin">Táo jīn rè</span>
+                    <p style="color: #636e72;">Immigrants call the city <strong style="color: var(--primary);">“Gold Mountain” (Jīn Shān / 金山)</strong>.</p>
                     <img src="https://gemini-static.wpscdn.com/gemini/sanfranciscohistory_goldrush_arrival.png" alt="Arrival at Wharf" class="gold-rush-img">
                 </div>
 
                 <div class="timeline-node">
                     <span class="year">1860s</span>
-                    <span class="event-title">The Transcontinental Railroad</span>
+                    <span class="event-title">横贯大陆铁路 | The Transcontinental Railroad</span>
+                    <span class="pinyin">Héng guàn dà lù tiě lù</span>
                     <div class="bio-inset">
                         <div class="bio-img-container">
                             <img src="http://googleusercontent.com/image_collection/image_retrieval/3016629175528275307_0" alt="Railroad Laborers" class="bio-img-small">
                             <a href="https://www.nps.gov/gosp/learn/historyculture/chinese-labor-and-the-iron-road.htm" target="_blank" class="img-link">🔗 National Park Service</a>
                         </div>
                         <div class="bio-text-small">
-                            <p>Chinese laborers were the backbone of the construction through the Sierra Nevadas.</p>
+                            <p>华工 (Huá gōng) were the backbone of construction through the Sierra Nevadas.</p>
                         </div>
                     </div>
                 </div>
 
                 <div class="timeline-node">
                     <span class="year">1898</span>
-                    <span class="event-title">United States v. Wong Kim Ark</span>
+                    <span class="event-title">黄金德案 | United States v. Wong Kim Ark</span>
+                    <span class="pinyin">Huáng Jīn dé àn</span>
                     <div class="bio-inset">
                         <div class="bio-img-container">
                             <img src="https://www.zinnedproject.org/wp-content/uploads/2018/03/wong_kim_ark.jpg" alt="Wong Kim Ark" class="bio-img-small">
                             <a href="https://www.zinnedproject.org/news/tdih/wong-kim-ark-case/" target="_blank" class="img-link">🔗 Zinn Education Project</a>
                         </div>
                         <div class="bio-text-small">
-                            <p><strong>Wong Kim Ark (黄金德)</strong> secured birthright citizenship for all under the 14th Amendment.</p>
+                            <p><strong>黄金德 (Huáng Jīn dé)</strong> secured birthright citizenship for all under the 14th Amendment.</p>
                         </div>
                     </div>
                 </div>
 
                 <div class="timeline-node">
                     <span class="year">1906</span>
-                    <span class="event-title">The Strategic Rebirth</span>
+                    <span class="event-title">旧金山大地震 | The Strategic Rebirth</span>
+                    <span class="pinyin">Jiù jīn shān dà dì zhèn</span>
                     <div class="bio-inset">
                         <div class="bio-img-container">
                             <img src="http://googleusercontent.com/image_collection/image_retrieval/17425896330350460006_0" alt="Grant Ave Rebuilding" class="bio-img-small">
                             <a href="https://artsandculture.google.com/story/earthquake-the-chinatown-story-chinese-historical-society-of-america/bgWhgn_sGgcA8A?hl=en" target="_blank" class="img-link">🔗 Google Arts & Culture</a>
                         </div>
                         <div class="bio-text-small">
-                            <p>By creating the <strong>"Pagoda Style"</strong> architecture, the community saved Chinatown from relocation.</p>
+                            <p>By creating "Pagoda Style" architecture, the community saved 唐人街 (Táng rén jiē) from relocation.</p>
                         </div>
                     </div>
                 </div>
 
                 <div class="timeline-node">
                     <span class="year">Modern Era</span>
-                    <span class="event-title">Continued Resilience</span>
+                    <span class="event-title">持续的韧性 | Continued Resilience</span>
+                    <span class="pinyin">Chí xù de rèn xìng</span>
                     <p style="color: #636e72;">Today, Chinatown remains a hub for Chinese heritage and immigrant rights in San Francisco.</p>
                     <img src="http://googleusercontent.com/image_collection/image_retrieval/3423489680485254273_0" alt="Modern San Francisco Chinatown" class="modern-img">
                 </div>
@@ -265,7 +277,7 @@
 
         <footer>
             <p>Built with Vue 3 & Modern CSS</p>
-            <p>City College of San Francisco | 2026</p>
+            <p>By Nàxī'ěr Yǎsīmǐn | City College of San Francisco | 2026</p>
         </footer>
     </main>
 </div>
