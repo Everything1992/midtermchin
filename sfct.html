@@ -15,40 +15,46 @@
             --accent: #f1c40f;
         }
 
+        /* Essential fix for "too wide" screens */
+        * { box-sizing: border-box; }
+
         body {
             margin: 0;
+            padding: 0;
             font-family: 'Inter', sans-serif;
             background-color: var(--bg);
             color: var(--text);
             -webkit-font-smoothing: antialiased;
+            overflow-x: hidden; /* Safety net for horizontal scrolling */
         }
 
         header {
             background: linear-gradient(135deg, var(--primary) 0%, #8e1e1e 100%);
             color: white;
-            padding: 80px 20px;
+            padding: 60px 20px;
             text-align: center;
         }
 
         header h1 {
             margin: 0;
-            font-size: 3rem;
+            font-size: clamp(1.8rem, 5vw, 3rem); /* Scales font based on screen size */
             font-weight: 600;
             letter-spacing: -1px;
         }
 
         .subtitle {
             color: var(--accent);
-            font-size: 1.1rem;
+            font-size: 1rem;
             text-transform: uppercase;
             letter-spacing: 2px;
             margin-top: 10px;
         }
 
         .main-content {
+            width: 100%;
             max-width: 800px;
-            margin: -50px auto 50px;
-            padding: 0 20px;
+            margin: -40px auto 50px;
+            padding: 0 15px;
         }
 
         .card {
@@ -57,6 +63,7 @@
             padding: 24px;
             box-shadow: 0 10px 30px rgba(0,0,0,0.05);
             margin-bottom: 30px;
+            width: 100%;
         }
 
         .video-wrapper {
@@ -66,6 +73,7 @@
             border-radius: 12px;
             overflow: hidden;
             background: #000;
+            margin-bottom: 10px;
         }
 
         .video-wrapper iframe {
@@ -123,6 +131,7 @@
         .bio-img-small {
             width: 130px;
             height: auto;
+            max-width: 100%;
             border-radius: 6px;
             display: block;
             margin-bottom: 8px;
@@ -131,6 +140,7 @@
 
         .full-width-img {
             width: 100%;
+            max-width: 100%;
             height: auto;
             display: block;
             border-radius: 12px;
@@ -139,8 +149,8 @@
         }
 
         .bio-text-small p {
-            margin: 0 0 10px 0;
-            font-size: 0.9rem;
+            margin: 0 0 12px 0;
+            font-size: 0.95rem;
             line-height: 1.6;
         }
 
@@ -151,7 +161,6 @@
             font-weight: 600;
         }
 
-        /* Styles for the References section */
         .ref-item {
             display: block;
             color: var(--text);
@@ -166,8 +175,11 @@
 
         footer { text-align: center; padding: 60px 20px; opacity: 0.6; font-size: 0.85rem; }
 
+        /* Responsive Grid for mobile */
         @media (max-width: 600px) {
             .bio-inset { flex-direction: column; align-items: center; text-align: center; }
+            .bio-img-small { width: 100%; max-width: 200px; }
+            header { padding: 40px 15px; }
         }
     </style>
 </head>
@@ -192,7 +204,7 @@
             </div>
         </div>
 
-      <div class="card language-note">
+        <div class="card language-note">
             <h3 style="margin-top:0; color: var(--primary); display: flex; align-items: center; gap: 10px;">
                 <span>🏮</span> Key Terminology & Resultative Complements
             </h3>
@@ -200,8 +212,7 @@
                 In this project, I utilize specific historical terminology and <b>Resultative Complements</b> (Verb + Result) to describe the timeline of San Francisco's Chinatown:
             </p>
             
-            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 20px;">
-                
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 15px;">
                 <div style="background: white; padding: 15px; border-radius: 8px; border: 1px solid #eee;">
                     <strong style="color: var(--primary); display: block; margin-bottom: 10px; border-bottom: 1px solid #f5f5f5;">Grammar: Outcomes</strong>
                     <p><b>记住 (jì zhù)</b> - Remember firmly</p>
@@ -211,36 +222,34 @@
 
                 <div style="background: white; padding: 15px; border-radius: 8px; border: 1px solid #eee;">
                     <strong style="color: var(--primary); display: block; margin-bottom: 10px; border-bottom: 1px solid #f5f5f5;">Heritage & Infrastructure</strong>
-                    <p><b>金山 (Jīn Shān)</b> <br> <span style="font-size: 0.85rem; color: #636e72;">"Gold Mountain" (San Francisco)</span></p>
-                    <p style="margin-top: 10px;"><b>横贯大陆铁路</b> <br> <span style="font-size: 0.85rem; color: #636e72;">Héng guàn dà lù tiě lù (Transcontinental Railroad)</span></p>
+                    <p><b>金山 (Jīn Shān)</b> - "Gold Mountain"</p>
+                    <p style="margin-top: 10px;"><b>横贯大陆铁路</b> - Transcontinental Railroad</p>
                 </div>
 
                 <div style="background: white; padding: 15px; border-radius: 8px; border: 1px solid #eee;">
                     <strong style="color: var(--primary); display: block; margin-bottom: 10px; border-bottom: 1px solid #f5f5f5;">Law & Resilience</strong>
-                    <p><b>黄金德案 (Huáng Jīn dé àn)</b> <br> <span style="font-size: 0.85rem; color: #636e72;">United States v. Wong Kim Ark</span></p>
-                    <p style="margin-top: 10px;"><b>旧金山大地震 (Jiù jīn shān dà dì zhèn)</b> <br> <span style="font-size: 0.85rem; color: #636e72;">Great San Francisco Earthquake</span></p>
-                    <p style="margin-top: 10px;"><b>持续的韧性 (Chí xù de rèn xìng)</b> <br> <span style="font-size: 0.85rem; color: #636e72;">Continued Resilience</span></p>
+                    <p><b>黄金德案</b> - U.S. v. Wong Kim Ark</p>
+                    <p style="margin-top: 10px;"><b>旧金山大地震</b> - SF Earthquake</p>
+                    <p style="margin-top: 10px;"><b>持续的韧性</b> - Continued Resilience</p>
                 </div>
-
             </div>
         </div>
+
+        <div class="card">
+            <h2 style="margin-top:0">Historical Milestones</h2>
+            <div class="timeline-container">
                 
                 <div class="timeline-node">
                     <span class="year">1850s</span>
                     <span class="event-title">淘金热 | The Gold Rush</span>
                     <span class="pinyin">Táo jīn rè</span>
-                    <p style="color: #636e72;">Immigrants call the city <strong style="color: var(--primary);">“Gold Mountain” (Jīn Shān / 金山)</strong>.</p>
+                    <div class="bio-text-small">
+                        <p>Immigrants called the city <strong style="color: var(--primary);">“Gold Mountain” (Jīn Shān / 金山)</strong>. Driven by civil war and famine in Guangdong, they were <strong>准备好 (zhǔn bèi hǎo - prepared)</strong> to find wealth.</p>
+                        <p>Despite the Foreign Miners’ Tax, they showed <strong>持续的韧性 (Chí xù de rèn xìng)</strong> by opening businesses that served the growing city.</p>
+                    </div>
                     <img src="lucid-origin_Image_of_Chinese_immigrants_in_traditional_clothing_with_distinct_facial_feature-0.jpg" alt="Arrival at Wharf" class="full-width-img">
                 </div>
-<div class="bio-text-small">
-            <p>Driven by civil war and famine in Guangdong, thousands of men crossed the Pacific to reach <strong>金山 (Jīn Shān - Gold Mountain)</strong>. They were <strong>准备好 (zhǔn bèi hǎo - prepared)</strong> to find wealth and return home to their families.</p>
-            
-            <p>Upon arrival, they faced the <i>Foreign Miners’ Tax</i> and were pushed out of rich gold deposits. Instead of giving up, they showed <strong>持续的韧性 (Chí xù de rèn xìng - Continued Resilience)</strong> by re-working "abandoned" mines and opening businesses like laundries and restaurants that served the growing city.</p>
-            
-            <p>San Francisco's Chinatown began here, as a vital support network where immigrants could <strong>记住 (jì zhù - remember firmly)</strong> their culture while surviving in a new land.</p>
-        </div>
-    </div>
-</div>
+
                 <div class="timeline-node">
                     <span class="year">1860s</span>
                     <span class="event-title">横贯大陆铁路 | The Transcontinental Railroad</span>
@@ -248,14 +257,11 @@
                     <div class="bio-inset">
                         <div class="bio-img-container">
                             <img src="railroad.jpg" alt="Railroad Laborers" class="bio-img-small">
-                            <a href="https://www.nps.gov/gosp/learn/historyculture/chinese-labor-and-the-iron-road.htm" target="_blank" class="img-link">🔗 National Park Service</a>
+                            <a href="https://www.nps.gov/gosp/learn/historyculture/chinese-labor-and-the-iron-road.htm" target="_blank" class="img-link">🔗 NPS Source</a>
                         </div>
                         <div class="bio-text-small">
-                           <p>The **华工 (Huá gōng)** were the indispensable backbone of the Central Pacific Railroad. To conquer the Sierra Nevada mountains, they had to blast through solid granite using unstable nitroglycerin.</p>
-            
-            <p>During the brutal winters of 1866 and 1867, workers lived and worked in tunnels carved <i>underneath</i> 35-foot snowdrifts. They had to be **准备好 (zhǔn bèi hǎo - fully prepared)** to face avalanches and sub-zero temperatures every day.</p>
-            
-            <p>Despite these deadly conditions, they successfully carved 15 tunnels through the mountains. History must **记住 (jì zhù - remember firmly)** that without their labor, the "Iron Road" would never have been finished.</p>
+                            <p>The <strong>华工 (Huá gōng)</strong> were the backbone of the railroad. They blasted through solid granite and worked under 35-foot snowdrifts.</p>
+                            <p>History must <strong>记住 (jì zhù - remember firmly)</strong> that without their labor, the "Iron Road" would never have been finished.</p>
                         </div>
                     </div>
                 </div>
@@ -267,12 +273,10 @@
                     <div class="bio-inset">
                         <div class="bio-img-container">
                             <img src="download.jpg" alt="Wong Kim Ark" class="bio-img-small">
-                            <a href="https://www.zinnedproject.org/news/tdih/wong-kim-ark-case/" target="_blank" class="img-link">🔗 Zinn Education Project</a>
                         </div>
                         <div class="bio-text-small">
-                           <p><strong>黄金德 (Huáng Jīn dé)</strong> was born in San Francisco, but after a trip to China, he was denied re-entry to the U.S. under the Chinese Exclusion Act.</p>
-            <p>He refused to accept this and took his case to the Supreme Court. He <strong>赢了 (yíng le - won)</strong>, legally establishing that the <strong>14th Amendment</strong> applies to everyone born on U.S. soil, regardless of their parents' race or status.</p>
-            <p>This victory <strong>保护好 (bǎo hù hǎo - protected well)</strong> the future of all immigrant families in America.</p>
+                            <p><strong>黄金德 (Huáng Jīn dé)</strong> was born in SF but denied re-entry after a trip to China. He fought this and <strong>赢了 (yíng le - won)</strong>.</p>
+                            <p>This established birthright citizenship for everyone born on U.S. soil under the <strong>14th Amendment</strong>.</p>
                         </div>
                     </div>
                 </div>
@@ -284,32 +288,25 @@
                     <div class="bio-inset">
                         <div class="bio-img-container">
                             <img src="rebuilding.jpg" alt="Grant Ave Rebuilding" class="bio-img-small">
-                            <a href="https://artsandculture.google.com/story/earthquake-the-chinatown-story-chinese-historical-society-of-america/bgWhgn_sGgcA8A?hl=en" target="_blank" class="img-link">🔗 Google Arts & Culture</a>
                         </div>
                         <div class="bio-text-small">
-                           <p>After the earthquake leveled the district, city officials tried to permanently move the Chinese residents out of the city center toward <strong>Daly City</strong> or <strong>Hunter's Point</strong>.</p>
-            
-            <p>To fight this, the community <strong>准备好 (zhǔn bèi hǎo - prepared)</strong> a genius plan: they hired Western architects to rebuild using <strong>"Pagoda Style"</strong> architecture with flared eaves and dragon motifs. By reinventing <strong>唐人街 (Táng rén jiē)</strong> as a tourist icon, they made the land too valuable for the city to seize.</p>
-            
-            <p>Through this "Orientalist" design, the community successfully <strong>守住 (shǒu zhù - held/defended)</strong> their rightful place in the heart of San Francisco.</p>
+                            <p>City officials tried to move residents to <strong>Daly City</strong> or <strong>Hunter's Point</strong>. The community <strong>准备好 (zhǔn bèi hǎo)</strong> a plan to use "Pagoda Style" architecture.</p>
+                            <p>By making <strong>唐人街 (Táng rén jiē)</strong> a tourist icon, they successfully <strong>守住 (shǒu zhù - defended)</strong> their place in the city center.</p>
                         </div>
                     </div>
                 </div>
 
-                <div class="timeline-node">
+                <div class="timeline-node" style="margin-bottom: 0;">
                     <span class="year">Modern Era</span>
                     <span class="event-title">持续的韧性 | Continued Resilience</span>
                     <span class="pinyin">Chí xù de rèn xìng</span>
-                    <p style="color: #636e72;">Today, Chinatown remains a hub for Chinese heritage and immigrant rights in San Francisco.</p>
+                    <div class="bio-text-small">
+                        <p>Chinatown has <strong>赢了 (yíng le)</strong> the battle against displacement for 175 years. It remains a political and cultural anchor.</p>
+                        <p>We must <strong>记住 (jì zhù)</strong> that these pagoda roofs are symbols of a community that refused to be moved.</p>
+                    </div>
                     <img src="sfnow.jpg" alt="Modern San Francisco Chinatown" class="full-width-img">
                 </div>
-<div class="bio-text-small">
-                            <p>Today, Chinatown is more than a tourist icon; it is a living neighborhood that has <strong>赢了 (yíng le - won)</strong> the battle against displacement for over 175 years. It remains the densest neighborhood west of Manhattan.</p>
-                            
-                            <p>From the fight for affordable housing to the preservation of Mandarin and Chinese heritage, the community continues to demonstrate <strong>持续的韧性 (Chí xù de rèn xìng)</strong>. It serves as a political and cultural anchor for the Chinese diaspora.</p>
-                            
-                            <p>As we look at the "Pagoda Style" roofs today, we must <strong>记住 (jì zhù - remember firmly)</strong> that they are symbols of a community that refused to be moved and <strong>准备好 (zhǔn bèi hǎo - prepared)</strong> a path for future generations.</p>
-                        </div>
+
             </div>
         </div>
 
@@ -339,4 +336,3 @@
 
 </body>
 </html>
-
